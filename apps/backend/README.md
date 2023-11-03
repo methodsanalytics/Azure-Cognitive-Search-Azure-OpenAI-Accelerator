@@ -22,6 +22,7 @@ Below are the steps to run the Bot API as an Azure Wep App, connected with the A
 3. Zip the code of the bot by executing the following command in the terminal (**you have to be inside the app/backend/ folder**):
 ```bash
 zip -j backend.zip ../../common/* ./*
+zip -r backend.zip ../../common ./ -x "*.pyc" "__pycache__/" ".ipynb_checkpoints/"
 ```
 4. Using the Azure CLI deploy the bot code to the Azure App Service created on Step 2
 ```bash
