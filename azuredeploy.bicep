@@ -87,7 +87,7 @@ resource azureSearch 'Microsoft.Search/searchServices@2021-04-01-Preview' = {
     replicaCount: azureSearchReplicaCount
     partitionCount: azureSearchPartitionCount
     hostingMode: azureSearchHostingMode
-    semanticSearch: 'free'
+    semanticSearch: 'standard'
   }
 }
 
@@ -201,6 +201,11 @@ resource formRecognizerAccount 'Microsoft.CognitiveServices/accounts@2023-05-01'
     name: 'S0'
   }
   kind: 'FormRecognizer'
+  properties: {
+    apiProperties: {
+      statisticsEnabled: false
+    }
+  }
 }
 
 resource blobStorageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {

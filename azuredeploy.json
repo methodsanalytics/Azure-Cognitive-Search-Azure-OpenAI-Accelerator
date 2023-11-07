@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.20.4.51522",
-      "templateHash": "17027619221182957879"
+      "version": "0.23.1.45101",
+      "templateHash": "2438818889237034428"
     }
   },
   "parameters": {
@@ -168,7 +168,7 @@
         "replicaCount": "[parameters('azureSearchReplicaCount')]",
         "partitionCount": "[parameters('azureSearchPartitionCount')]",
         "hostingMode": "[parameters('azureSearchHostingMode')]",
-        "semanticSearch": "free"
+        "semanticSearch": "standard"
       }
     },
     {
@@ -298,7 +298,12 @@
       "sku": {
         "name": "S0"
       },
-      "kind": "FormRecognizer"
+      "kind": "FormRecognizer",
+      "properties": {
+        "apiProperties": {
+          "statisticsEnabled": false
+        }
+      }
     },
     {
       "type": "Microsoft.Storage/storageAccounts",
