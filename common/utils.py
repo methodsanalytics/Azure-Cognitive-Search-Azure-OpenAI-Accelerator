@@ -485,7 +485,9 @@ class DocSearchResults(BaseTool):
             # Search in text-based indexes first and update corresponding vector indexes
             ordered_results = get_search_results(query, indexes=self.indexes, k=self.k, 
                                                     reranker_threshold=self.reranker_th,
-                                                    vector_search=False)
+                                                    vector_search=False,
+                                                    sas_token=self.sas_token,
+                                                )
             
             update_vector_indexes(ordered_search_results=ordered_results, embedder=embedder)
             
